@@ -208,17 +208,16 @@
     <%----------------------------------------------------------------Document Ready----------------------------------------------------------------------------------%>
     <script type="text/javascript">
         $(document).ready(function () {
+
+            alert("Test GitHub");
+
             checkLenght();
             changeValid();
-
             bindPager('RequestPager');
             loadGrid('TblZone', readReferencesCountForSearch, ZoneReq);
-
             $('#txtZoneName').data('lenght', '50');
-           
-
-          
             var id;
+
             $('#txtZone').keydown(function (e) {
                 if (e.keyCode == 13) {
                     $('#btnSearchZone').focus();
@@ -232,9 +231,7 @@
                 loadGrid('TblZone', readReferencesCountForSearch, SearchInTable);
             })
             $("#modalAdd").click(function () {
-                //   if ($("#InsertForm").valid() === true) {
                 alert('true');
-                // }
             })
             $("#btnAdd").click(function () {
                 emptyElements('ZoneManage');
