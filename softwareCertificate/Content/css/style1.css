@@ -1,0 +1,170 @@
+﻿@font-face {
+    font-family: 'B Nazanin';
+    src: url('fonts/B_Nazanin__Bold.eot?#') format('eot'), url('fonts/B_Nazanin__Bold.woff') format('woff'), url('fonts/B_Nazanin__Bold.ttf') format('truetype');
+}
+
+body {
+    background: url('../images/grid.png') repeat #fefefe;
+    direction: rtl;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+.head-title {
+    background:#419ac7 !important;
+    color: #fff;
+    text-align:center;
+}
+
+.line-body {
+    height: 4px;
+    background: url('../images/line-body.png') repeat-x right top;
+}
+
+.menu {
+    background: #3e3e3e;
+    min-height: 650px;
+}
+/* Generated via www.cssmenubuilder.com */
+
+.logo {
+    border: 0 none;
+    padding: 10px;
+    height: 86px;
+}
+
+.logo-company {
+    background: #3e3e3e url('../images/logo-company.jpg') no-repeat center center;
+    width: 100%;
+    height: 66px;
+}
+
+.line-logo {
+    background: url('../images/line-logo.jpg') repeat-x right top;
+    height: 3px;
+    border: 0 none;
+}
+
+.breadcrumb-content {
+    margin-top: 30px;
+}
+
+.back-content {
+    background: url('../images/back-content.png') repeat-x right top;
+    height: 52px;
+    margin: 0 -30px 0 -15px;
+    padding: 5px 10px;
+}
+
+    .back-content span {
+        font: bold 20px/40px 'B Nazanin';
+        color: #fff;
+        text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+    }
+
+.icon-list {
+    background: url('../images/icon-list.png') no-repeat right top;
+    height: 63px;
+    width: 44px;
+    margin: 0 0 0 5px;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+    .icon-list.left {
+        left: 10px;
+    }
+
+    .icon-list.center {
+        left: 60px;
+    }
+
+    .icon-list.right {
+        left: 110px;
+    }
+
+.exit {
+    background: url('../images/opened.png') no-repeat center 28px;
+    width: 44px;
+    height: 60px;
+}
+
+.change-password {
+    background: url('../images/key.png') no-repeat center 28px;
+    width: 44px;
+    height: 60px;
+}
+
+.information {
+    background: url('../images/question.png') no-repeat center 28px;
+    width: 44px;
+    height: 60px;
+}
+
+.panel-title {
+    border-bottom: 1px solid #ccc;
+    background: url('../images/back-title-panel.png') repeat-x right bottom;
+}
+
+    .panel-title span {
+        padding: 8px;
+        line-height: 35px;
+        font: normal 18px/35px 'B Nazanin';
+        text-shadow: 1px 1px 0px rgba(68, 182, 174, 1);
+    }
+
+.table-striped > tbody > tr:nth-child(2n+1) > th,
+.table-hover > tbody > tr:hover > th,
+.table-striped > tbody > tr:nth-child(2n+1) > th,
+.table-hover > tbody > tr > th {
+    background: #3e3e3e;
+    color: #fff;
+    font-weight: bold;
+}
+
+    .table-striped > tbody > tr:nth-child(2n+1) > th.edit-remove,
+    .table-hover > tbody > tr:hover > th.edit-remove,
+    .table-striped > tbody > tr:nth-child(2n+1) > td.edit-remove,
+    .table-hover > tbody > tr:hover > td.edit-remove,
+    .table-hover > tbody > tr > th.edit-remove,
+    .table-hover > tbody > tr > td.edit-remove {
+        width: 3% !important;
+        text-align: center !important;
+    }
+
+.modal .pagination {
+    margin: 0;
+}
+
+.no-taeed a {
+    color: #ff0000;
+}
+
+    .no-taeed a:hover {
+        color: #d00303;
+    }
+
+.taeed a {
+    color: #0da831;
+}
+
+    .taeed a:hover {
+        color: #55dc27;
+    }
+
+.copy-right {
+    text-align: center;
+    direction: ltr;
+    padding-top: 20px;
+    position: absolute;
+    bottom: 3px;
+    left: 10px;
+}
+
+    .copy-right a,
+    .copy-right a:hover {
+        font: normal 10px 'Tahoma' !important;
+        color: #b2b2b2;
+    }

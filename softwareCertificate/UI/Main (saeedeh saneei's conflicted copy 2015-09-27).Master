@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="softwareCertificate.UI.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <%-- -----Style CSS----------------------------------------%>
+    <link href="../Content/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/css/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="../Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/WebYekan/WebYekan.css" rel="stylesheet" />
+    <link href="../Content/css/styles-menu.css" rel="stylesheet" />
+    <link href="../Content/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="../Content/css/style.css" rel="stylesheet" />
+    <link href="../Content/styles/jquery-ui-1.8.14.css" rel="stylesheet" />
+    <link href="../Content/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%-- -----Jquery----------------------------------------%>
+    <script src="../Content/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="../Content/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../Content/js/script-menu.js" type="text/javascript"></script>
+    <script src="../Content/js/bootstrap-select.js" type="text/javascript"></script>
+    <script src="../Content/js/jquery.ui.datepicker-cc.all.min.js"></script>
+    <script src="../Content/js/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/scripts.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-2 nav" style="margin-right: -15px;">
+            <div class="line-body"></div>
+            <div class="menu">
+                <div class="logo">
+                    <a href="#">
+                        <div class="logo-company"></div>
+                    </a>
+                </div>
+                <div class="line-logo"></div>
+                <div id='cssmenu' runat="server">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="back-content">
+                <span>سامانه ثبت شناسنامه نرم افزر های  دانشگاه علوم پزشکی</span>
+                <div class="icon-list left" data-toggle="tooltip" data-placement="left" title="خروج از سیستم">
+                    <div class="exit">
+                    </div>
+                </div>
+                <div class="icon-list center">
+                    <div class="change-password" data-toggle="tooltip" data-placement="left" title="تغییر کلمه عبور"></div>
+                </div>
+                <div class="icon-list right">
+                    <div class="information" data-toggle="tooltip" data-placement="left" title="راهنمای سیستم"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcrumb-content">
+                        <ol class="breadcrumb">
+                            <li>
+                                <span>کاربر | </span>
+                                <a href="#">
+                                    <%--<img class="img-circle" src="../Content/images/002.png" />--%>
+                                    <span id="txtUsername" runat="server"></span>
+                                </a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="copy-right">
+                <a href="http://padidar.com/">
+                    <img src="../Content/images/logo-padidar.png" style="display: inline-block; background-position: left;" />
+                    Copyright © 2015 Padidar co, All rights reserved. </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

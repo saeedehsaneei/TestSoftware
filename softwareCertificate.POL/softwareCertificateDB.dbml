@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="softwareCertificate" Class="softwareCertificateDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.accessUser" Member="accessUsers">
+    <Type Name="accessUser">
+      <Column Name="accessCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="vahedCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="userinfo_accessUser" Member="userinfo" ThisKey="userCode" OtherKey="userCode" Type="userinfo" IsForeignKey="true" />
+      <Association Name="vahedInfo_accessUser" Member="vahedInfo" ThisKey="vahedCode" OtherKey="vahedCode" Type="vahedInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.zoneInfo" Member="zoneInfos">
+    <Type Name="zoneInfo">
+      <Column Name="zoneCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="zoneName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="zoneInfo_softwareInfo" Member="softwareInfos" ThisKey="zoneCode" OtherKey="zoneCode" Type="softwareInfo" />
+      <Association Name="zoneInfo_userinfo" Member="userinfos" ThisKey="zoneCode" OtherKey="zoneCode" Type="userinfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.companyInfo" Member="companyInfos">
+    <Type Name="companyInfo">
+      <Column Name="companyCode" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="companyName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="companyCity" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="telephone" Type="System.String" DbType="Char(11) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DB" Member="DBs">
+    <Type Name="DB">
+      <Column Name="dbCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DB_softwareInfo" Member="softwareInfos" ThisKey="dbCode" OtherKey="dbCode" Type="softwareInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.memariSystem" Member="memariSystems">
+    <Type Name="memariSystem">
+      <Column Name="memariCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="memariName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="memariSystem_softwareInfo" Member="softwareInfos" ThisKey="memariCode" OtherKey="memariCode" Type="softwareInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.programLanguage" Member="programLanguages">
+    <Type Name="programLanguage">
+      <Column Name="programLangCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="languageName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="programLanguage_softwareInfo" Member="softwareInfos" ThisKey="programLangCode" OtherKey="languageCode" Type="softwareInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.softwareInfo" Member="softwareInfos">
+    <Type Name="softwareInfo">
+      <Column Name="softwareCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="softCodeDefine" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="languageCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="memariCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="dbCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cityInUse" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="softwareName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="serverLocation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="companyName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="softwarePrice" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="isSupport" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="endDateSupport" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="supportPrice" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="isUsed" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="instalationDate" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="contractNumber" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="supportPeriodNumber" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="supportPeriodType" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="isHardwareLock" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="isSource" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="lastDbVersion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="supervisorName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="supervisorTell" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="companyNamayandeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="supportTell" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="isReportCreate" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="isFixReport" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="userCount" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="isDocument" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="softwareProblem" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="isPatchUpdate" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="isFtpUpdate" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="isDirectAccessUpdate" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="isOtherUpdate" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="isOpBuyer" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="userCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="vahedCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="zoneCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="isAllVahed" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="companyTell" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="companyAddress" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="subject" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Association Name="softwareInfo_upgrade" Member="upgrades" ThisKey="softwareCode" OtherKey="softwareCode" Type="upgrade" />
+      <Association Name="DB_softwareInfo" Member="DB" ThisKey="dbCode" OtherKey="dbCode" Type="DB" IsForeignKey="true" />
+      <Association Name="memariSystem_softwareInfo" Member="memariSystem" ThisKey="memariCode" OtherKey="memariCode" Type="memariSystem" IsForeignKey="true" />
+      <Association Name="programLanguage_softwareInfo" Member="programLanguage" ThisKey="languageCode" OtherKey="programLangCode" Type="programLanguage" IsForeignKey="true" />
+      <Association Name="zoneInfo_softwareInfo" Member="zoneInfo" ThisKey="zoneCode" OtherKey="zoneCode" Type="zoneInfo" IsForeignKey="true" />
+      <Association Name="userinfo_softwareInfo" Member="userinfo" ThisKey="userCode" OtherKey="userCode" Type="userinfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.upgrade" Member="upgrades">
+    <Type Name="upgrade">
+      <Column Name="upgradeCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="softwareCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="upgradeDate" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="vahedCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="softwareInfo_upgrade" Member="softwareInfo" ThisKey="softwareCode" OtherKey="softwareCode" Type="softwareInfo" IsForeignKey="true" />
+      <Association Name="vahedInfo_upgrade" Member="vahedInfo" ThisKey="vahedCode" OtherKey="vahedCode" Type="vahedInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.userinfo" Member="userinfos">
+    <Type Name="userinfo">
+      <Column Name="userCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pass" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mobile" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="zoneCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="userinfo_accessUser" Member="accessUsers" ThisKey="userCode" OtherKey="userCode" Type="accessUser" />
+      <Association Name="userinfo_softwareInfo" Member="softwareInfos" ThisKey="userCode" OtherKey="userCode" Type="softwareInfo" />
+      <Association Name="userinfo_VahedUser" Member="VahedUsers" ThisKey="userCode" OtherKey="userCode" Type="VahedUser" />
+      <Association Name="zoneInfo_userinfo" Member="zoneInfo" ThisKey="zoneCode" OtherKey="zoneCode" Type="zoneInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vahedInfo" Member="vahedInfos">
+    <Type Name="vahedInfo">
+      <Column Name="vahedCode" Type="System.Int16" DbType="SmallInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vahedName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="city" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="vahedInfo_accessUser" Member="accessUsers" ThisKey="vahedCode" OtherKey="vahedCode" Type="accessUser" />
+      <Association Name="vahedInfo_upgrade" Member="upgrades" ThisKey="vahedCode" OtherKey="vahedCode" Type="upgrade" />
+      <Association Name="vahedInfo_VahedUser" Member="VahedUsers" ThisKey="vahedCode" OtherKey="vahedCode" Type="VahedUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VahedUser" Member="VahedUsers">
+    <Type Name="VahedUser">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vahedCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="userCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="deleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="userinfo_VahedUser" Member="userinfo" ThisKey="userCode" OtherKey="userCode" Type="userinfo" IsForeignKey="true" />
+      <Association Name="vahedInfo_VahedUser" Member="vahedInfo" ThisKey="vahedCode" OtherKey="vahedCode" Type="vahedInfo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
